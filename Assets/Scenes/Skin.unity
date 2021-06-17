@@ -812,6 +812,7 @@ GameObject:
   m_Component:
   - component: {fileID: 491833190}
   - component: {fileID: 491833189}
+  - component: {fileID: 491833191}
   m_Layer: 0
   m_Name: SaveManager
   m_TagString: Untagged
@@ -832,7 +833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    coin: 0
+    diamond: 0
     buyWheelSkin: 0
     buyEyeSkin: 0
     buyMetalSkin: 0
@@ -854,6 +855,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &491833191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491833188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3cd1f35ab8bd8f4d870208f9cf70072, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &635256834
 GameObject:
   m_ObjectHideFlags: 0
@@ -1824,9 +1837,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1822940301}
-        m_TargetAssemblyTypeName: SkinManager, Assembly-CSharp
-        m_MethodName: PlayeScene
+      - m_Target: {fileID: 491833191}
+        m_TargetAssemblyTypeName: SceneControl, Assembly-CSharp
+        m_MethodName: PlayButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3514,7 +3527,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 439918d1598342044b508c6958dd52d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 1367976386}
   save: {fileID: 491833189}
   buyButtons:
   - {fileID: 1768746348}

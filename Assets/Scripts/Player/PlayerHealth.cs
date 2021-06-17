@@ -34,6 +34,7 @@ public class PlayerHealth : MonoBehaviour
     {
         transform.localScale -= new Vector3(0.05f, 0.05f, 0.05f);
         //effect
+        //speed --
         DecreaseGreenBall();
     }
     private void GroundTrapDamage()

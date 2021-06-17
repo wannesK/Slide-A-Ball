@@ -3,20 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraControl : MonoBehaviour
-{
-    public float zOffset, yOffset;
+{   
+    public float followSpeed;
+    public Vector3 offset;
 
     private Transform player;
-
+    private bool gameStarted;
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        StartCoroutine(FindPlayer());
+    }
+    void FixedUpdate()
+    {
+        FollowPlayer();
+    }
+    private void FollowPlayer()
+    {
+        if (gameStarted)
+        {
+            Vector3 desiredPosition = player.position + offset;
+            Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, followSpeed);
+
+            transform.position = smoothedPosition;
+        }
     }
 
-    void LateUpdate()
+    private IEnumerator FindPlayer()
     {
+        yield return new WaitForSeconds(0.01f);
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-
-        transform.position = new Vector3(player.position.x, player.position.y + yOffset, player.position.z + zOffset);
+        gameStarted = true;
     }
 }
