@@ -75,7 +75,7 @@ public class SaveManager : MonoBehaviour
 [System.Serializable]
 public class GameData
 {
-    public int coin;
+    public int diamond;
 
     public int buyWheelSkin, buyEyeSkin, buyMetalSkin;
     public int equipDefaultSkin = 1, equipWheelSkin, equipEyeSkin, equipMetalSkin;

@@ -1,15 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 
 public class SkinManager : MonoBehaviour
 {
     
-    public TextMeshProUGUI coinText;
     public SaveManager save;
 
     public Button[] buyButtons;
@@ -18,44 +13,29 @@ public class SkinManager : MonoBehaviour
 
     void Start()
     {
-        coinText.text = save.data.coin.ToString();
-
         CheckSkinIsBuyed();
         CheckSkinEquip();
-
-
-    }
-
-    private void Update()
-    {
-
-    }
-
-    public void IncreaseCoin()
-    {
-        save.data.coin += 100;
-        coinText.text = save.data.coin.ToString();
     }
 
     public void BuyButton()
     {
-        if (EventSystem.current.currentSelectedGameObject.name == "Buy" && save.data.coin >= 100) //Hangi button a basýldý kontrolu
+        if (EventSystem.current.currentSelectedGameObject.name == "Buy" && save.data.diamond >= 100) //Hangi button a basýldý kontrolu
         {
-            save.data.coin -= 100;
+            save.data.diamond -= 100;
             save.data.buyWheelSkin = 1;  //save deki int lari 1 e eþitleyip aþaðýda kontrol ediyo
             
             Debug.Log("Skin buyed");
         }
-        else if (EventSystem.current.currentSelectedGameObject.name == "Buy1" && save.data.coin >= 200)
+        else if (EventSystem.current.currentSelectedGameObject.name == "Buy1" && save.data.diamond >= 200)
         {
-            save.data.coin -= 200;
+            save.data.diamond -= 200;
             save.data.buyEyeSkin = 1;
 
             Debug.Log("Skin buyed1");
         }
-        else if (EventSystem.current.currentSelectedGameObject.name == "Buy2" && save.data.coin >= 300)
+        else if (EventSystem.current.currentSelectedGameObject.name == "Buy2" && save.data.diamond >= 300)
         {
-            save.data.coin -= 300;
+            save.data.diamond -= 300;
             save.data.buyMetalSkin = 1;
 
             Debug.Log("Skin buyed2");
@@ -66,7 +46,6 @@ public class SkinManager : MonoBehaviour
         }
 
         CheckSkinIsBuyed();
-        coinText.text = save.data.coin.ToString();
 
     }  
     public void CheckSkinIsBuyed() // kayýtlý int deðerlerini kontrol edip ona göre butonlarý aktif ediyo
@@ -148,11 +127,6 @@ public class SkinManager : MonoBehaviour
             skins[3].gameObject.SetActive(true);
             equipButtons[3].interactable = false;
         }
-    }
-
-    public void PlayeScene()
-    {
-        SceneManager.LoadScene("Main");
     }
 
 }
