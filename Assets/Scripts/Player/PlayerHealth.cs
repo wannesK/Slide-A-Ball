@@ -11,25 +11,36 @@ public class PlayerHealth : MonoBehaviour
         {
             EnlargePlayer();
             Destroy(other.gameObject);
-            //effect
+            
         }
         else if (other.CompareTag("RedBall"))
         {
             ShrinkPlayer();
             Destroy(other.gameObject);
-            //effect
+        }
+        else if (other.CompareTag("GroundTrap"))
+        {
+            GroundTrapDamage();
         }
     }
 
     private void EnlargePlayer()
     {
         transform.localScale += new Vector3(0.05f, 0.05f, 0.05f);
+        //effect
         GreenBallCount();
     }
     private void ShrinkPlayer()
     {
         transform.localScale -= new Vector3(0.05f, 0.05f, 0.05f);
+        //effect
         DecreaseGreenBall();
+    }
+    private void GroundTrapDamage()
+    {
+        transform.localScale -= new Vector3(0.1f, 0.1f, 0.1f);
+        //effect
+        greenBallCount -= 2;
     }
 
     private void GreenBallCount()
