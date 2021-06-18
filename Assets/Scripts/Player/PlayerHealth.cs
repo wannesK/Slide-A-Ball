@@ -18,9 +18,9 @@ public class PlayerHealth : MonoBehaviour
             ShrinkPlayer();
             Destroy(other.gameObject);
         }
-        else if (other.CompareTag("GroundTrap"))
+        else if (other.CompareTag("Trap"))
         {
-            GroundTrapDamage();
+            TrapDamage();
         }
     }
 
@@ -37,7 +37,7 @@ public class PlayerHealth : MonoBehaviour
         //speed --
         DecreaseGreenBall();
     }
-    private void GroundTrapDamage()
+    private void TrapDamage()
     {
         transform.localScale -= new Vector3(0.1f, 0.1f, 0.1f);
         //effect
