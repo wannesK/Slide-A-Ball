@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Rotator : MonoBehaviour
 {
-   
+    public float rotateSpeedX, rotateSpeedY, rotateSpeedZ;
+
     void Update()
     {
-        transform.Rotate(50f * Time.deltaTime, 50f * Time.deltaTime, 50f * Time.deltaTime);
+
+        transform.Rotate(rotateSpeedX * Time.deltaTime, rotateSpeedY * Time.deltaTime, rotateSpeedZ * Time.deltaTime);
     }
 }
