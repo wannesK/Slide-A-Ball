@@ -12,11 +12,12 @@ public class DiamondsControl : MonoBehaviour
     {
         SetDiamondText();
     }
-    public void IncreaseDiamond()
+    public int IncreaseDiamond(int value)
     {
-        save.data.diamond += Random.Range(4, 10);
+        save.data.diamond += value;
 
         SetDiamondText();
+        return save.data.diamond;
     }
     public void SetDiamondText()
     {
