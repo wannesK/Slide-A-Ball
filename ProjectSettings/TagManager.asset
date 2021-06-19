@@ -10,6 +10,7 @@ TagManager:
   - Trap
   - Boss
   - GameManager
+  - WallBarrier
   layers:
   - Default
   - TransparentFX

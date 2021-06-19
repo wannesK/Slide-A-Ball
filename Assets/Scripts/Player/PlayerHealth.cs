@@ -27,6 +27,12 @@ public class PlayerHealth : MonoBehaviour
         {
             TrapDamage();
         }
+        else if (other.CompareTag("WallBarrier"))
+        {
+            TrapDamage();
+            Destroy(other.gameObject);
+            //Wall explotion effect
+        }
     }
 
     private void EnlargePlayer()

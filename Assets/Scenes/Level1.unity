@@ -17449,7 +17449,7 @@ GameObject:
   - component: {fileID: 1624409683}
   m_Layer: 0
   m_Name: Wall
-  m_TagString: Trap
+  m_TagString: WallBarrier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
