@@ -22,12 +22,15 @@ public class LevelProgressBar : MonoBehaviour
 
     void Update()
     {
-        if (player.position.z <= maxDistance && player.position.z <= endLine.position.z)
+        if (slider.value < 0.97f)
         {
-            float distance = 1 - (GetDistance() / maxDistance);
-            SetProgress(distance);
+            if (player.position.z <= maxDistance && player.position.z <= endLine.position.z)
+            {
+                float distance = 1 - (GetDistance() / maxDistance);
+                SetProgress(distance);
 
-        }
+            }
+        }       
     }
 
     private float GetDistance()

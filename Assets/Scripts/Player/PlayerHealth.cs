@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int greenBallCount;
+    private GameManager gameManager;
+
+    private void Awake()
+    {
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("GreenBall"))
@@ -28,28 +33,20 @@ public class PlayerHealth : MonoBehaviour
     {
         transform.localScale += new Vector3(0.05f, 0.05f, 0.05f);
         //effect
-        GreenBallCount();
+        gameManager.IncreaseGreenBall(1);
     }
     private void ShrinkPlayer()
     {
         transform.localScale -= new Vector3(0.05f, 0.05f, 0.05f);
         //effect
         //speed --
-        DecreaseGreenBall();
+        gameManager.DecreaseGreenBall(1);
     }
     private void TrapDamage()
     {
         transform.localScale -= new Vector3(0.1f, 0.1f, 0.1f);
         //effect
-        greenBallCount -= 2;
+        gameManager.DecreaseGreenBall(2);
     }
 
-    private void GreenBallCount()
-    {
-        greenBallCount++;
-    }
-    private void DecreaseGreenBall()
-    {
-        greenBallCount--;
-    }
 }

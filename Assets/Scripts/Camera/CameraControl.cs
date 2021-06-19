@@ -6,9 +6,9 @@ public class CameraControl : MonoBehaviour
 {   
     public float followSpeed;
     public Vector3 offset;
+    public bool gameStarted;
 
     private Transform player;
-    private bool gameStarted;
     void Start()
     {
         StartCoroutine(FindPlayer());

@@ -8,6 +8,8 @@ TagManager:
   - GreenBall
   - RedBall
   - Trap
+  - Boss
+  - GameManager
   layers:
   - Default
   - TransparentFX
