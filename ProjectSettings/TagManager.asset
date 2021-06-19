@@ -11,6 +11,7 @@ TagManager:
   - Boss
   - GameManager
   - WallBarrier
+  - RotatingTrap
   layers:
   - Default
   - TransparentFX

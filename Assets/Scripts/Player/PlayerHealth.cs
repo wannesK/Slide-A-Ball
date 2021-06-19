@@ -33,6 +33,14 @@ public class PlayerHealth : MonoBehaviour
             Destroy(other.gameObject);
             //Wall explotion effect
         }
+        else if (other.CompareTag("RotatingTrap"))
+        {
+            gameManager.StopFunctions();
+            Destroy(gameObject);
+            //dead effect
+            //restart level UI
+
+        }
     }
 
     private void EnlargePlayer()

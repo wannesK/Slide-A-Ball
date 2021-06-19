@@ -8,9 +8,10 @@ public class LevelProgressBar : MonoBehaviour
     [SerializeField] Transform endLine;
     [SerializeField] Slider slider;
 
+    public bool gameRunning = true;
+
     private Transform player;
     private float maxDistance;
-
     
     void Start()
     {
@@ -22,7 +23,7 @@ public class LevelProgressBar : MonoBehaviour
 
     void Update()
     {
-        if (slider.value < 0.97f)
+        if (gameRunning)
         {
             if (player.position.z <= maxDistance && player.position.z <= endLine.position.z)
             {
