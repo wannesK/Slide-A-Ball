@@ -17,6 +17,7 @@ public class DiamondsControl : MonoBehaviour
         save.data.diamond += value;
 
         SetDiamondText();
+
         return save.data.diamond;
     }
     public void SetDiamondText()

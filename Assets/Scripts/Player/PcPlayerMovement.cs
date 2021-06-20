@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PcPlayerMovement : MonoBehaviour
 {
-    public float speed = 4f;
+    public float speed = 7f;
     private Rigidbody rigid;
 
     void Start()

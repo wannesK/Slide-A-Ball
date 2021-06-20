@@ -6,18 +6,24 @@ public class Diamond : MonoBehaviour
 {    
     public int minDiaValue, maxDiaValue;
 
-    public DiamondsControl control;
+    private DiamondsControl control;
+    private EffectController effect;
+    private void Start()
+    {
+        control = GameObject.FindGameObjectWithTag("GameManager").GetComponent<DiamondsControl>();
+        effect = GameObject.FindGameObjectWithTag("GameManager").GetComponent<EffectController>();        
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
-        {
+        {            
             int diamondValue = Random.Range(minDiaValue, maxDiaValue);
 
             control.IncreaseDiamond(diamondValue);
-            Destroy(gameObject);
-            Debug.Log(diamondValue);
-            //effect
 
+            effect.FloatingText(transform, "+" + diamondValue.ToString());
+
+            Destroy(gameObject);
         }
     }
 }

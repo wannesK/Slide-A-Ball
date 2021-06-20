@@ -7,10 +7,11 @@ public class BossBall : MonoBehaviour
     public int bossHealt;
 
     private GameManager gameManager;
-
+    private EffectController effect;
     private void Awake()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        effect = GameObject.FindGameObjectWithTag("GameManager").GetComponent<EffectController>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -25,13 +26,13 @@ public class BossBall : MonoBehaviour
             if (gameManager.greenBall > bossHealt)
             {                
                 Destroy(gameObject);
-                //effect
+                effect.BossDeathEffect(transform);
                 //next level UI
             }
             else
             {
                 Destroy(other.gameObject);
-                //effect
+                effect.PlayerDeathEffect(other.transform);
                 //restart level UI
             }
 
