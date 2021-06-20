@@ -6,12 +6,14 @@ using TMPro;
 public class EffectController : MonoBehaviour
 {
     public GameObject[] effects;
-
     
     public CameraShake shake;
+
     public void PlayerDeathEffect(Transform transform)
     {
         Instantiate(effects[0], transform.position, Quaternion.identity);
+
+        ShakeTheCamera();
     }
     public void WallBreakEffect(Transform transform)
     {

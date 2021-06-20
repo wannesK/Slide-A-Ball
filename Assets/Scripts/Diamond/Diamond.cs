@@ -21,7 +21,7 @@ public class Diamond : MonoBehaviour
 
             control.IncreaseDiamond(diamondValue);
 
-            effect.FloatingText(transform, "+" + diamondValue.ToString());
+            effect.FloatingText(transform, $"+{diamondValue}");
 
             Destroy(gameObject);
         }
