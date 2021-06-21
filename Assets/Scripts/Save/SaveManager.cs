@@ -77,7 +77,7 @@ public class GameData
 {
     public int diamond;
 
-    public int buyWheelSkin, buyEyeSkin, buyMetalSkin;
-    public int equipDefaultSkin = 1, equipWheelSkin, equipEyeSkin, equipMetalSkin;
+    public int buySoccerSkin, buyWheelSkin, buyEyeSkin, buyMetalSkin;
+    public int equipDefaultSkin = 1, equipSoccerSkin, equipWheelSkin, equipEyeSkin, equipMetalSkin;
 }
 

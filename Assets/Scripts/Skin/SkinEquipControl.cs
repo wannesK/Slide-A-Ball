@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class Skins : MonoBehaviour
+public class SkinEquipControl : MonoBehaviour
 {
     public SaveManager save;
 
@@ -27,23 +26,21 @@ public class Skins : MonoBehaviour
         {
             skins[0].gameObject.SetActive(true);
         }
-        if (save.data.equipWheelSkin == 1)
+        else if (save.data.equipSoccerSkin == 1)
         {
             skins[1].gameObject.SetActive(true);
         }
-        if (save.data.equipEyeSkin == 1)
+        else if (save.data.equipWheelSkin == 1)
         {
             skins[2].gameObject.SetActive(true);
         }
-        if (save.data.equipMetalSkin == 1)
+        else if (save.data.equipEyeSkin == 1)
         {
             skins[3].gameObject.SetActive(true);
         }
-    }
-
-
-    public void SkinScreen()
-    {
-        SceneManager.LoadScene("Skin"); // + variable working
+        else if (save.data.equipMetalSkin == 1)
+        {
+            skins[4].gameObject.SetActive(true);
+        }
     }
 }

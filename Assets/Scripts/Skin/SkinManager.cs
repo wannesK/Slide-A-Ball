@@ -9,7 +9,6 @@ public class SkinManager : MonoBehaviour
 
     public Button[] buyButtons;
     public Button[] equipButtons;
-    public GameObject[] skins;
 
     void Start()
     {
@@ -22,18 +21,25 @@ public class SkinManager : MonoBehaviour
         if (EventSystem.current.currentSelectedGameObject.name == "Buy" && save.data.diamond >= 100) //Hangi button a basýldý kontrolu
         {
             save.data.diamond -= 100;
+            save.data.buySoccerSkin = 1;  //save deki int lari 1 e eþitleyip aþaðýda kontrol ediyo
+
+            Debug.Log("Skin buyed");
+        }
+        else if (EventSystem.current.currentSelectedGameObject.name == "Buy1" && save.data.diamond >= 100) //Hangi button a basýldý kontrolu
+        {
+            save.data.diamond -= 100;
             save.data.buyWheelSkin = 1;  //save deki int lari 1 e eþitleyip aþaðýda kontrol ediyo
             
             Debug.Log("Skin buyed");
         }
-        else if (EventSystem.current.currentSelectedGameObject.name == "Buy1" && save.data.diamond >= 200)
+        else if (EventSystem.current.currentSelectedGameObject.name == "Buy2" && save.data.diamond >= 200)
         {
             save.data.diamond -= 200;
             save.data.buyEyeSkin = 1;
 
             Debug.Log("Skin buyed1");
         }
-        else if (EventSystem.current.currentSelectedGameObject.name == "Buy2" && save.data.diamond >= 300)
+        else if (EventSystem.current.currentSelectedGameObject.name == "Buy3" && save.data.diamond >= 300)
         {
             save.data.diamond -= 300;
             save.data.buyMetalSkin = 1;
@@ -50,20 +56,25 @@ public class SkinManager : MonoBehaviour
     }  
     public void CheckSkinIsBuyed() // kayýtlý int deðerlerini kontrol edip ona göre butonlarý aktif ediyo
     {
-        if (save.data.buyWheelSkin == 1)
+        if (save.data.buySoccerSkin == 1)
         {
             buyButtons[0].gameObject.SetActive(false);
             equipButtons[1].gameObject.SetActive(true);
         }
-        if (save.data.buyEyeSkin == 1)
+        if (save.data.buyWheelSkin == 1)
         {
             buyButtons[1].gameObject.SetActive(false);
             equipButtons[2].gameObject.SetActive(true);
         }
-        if (save.data.buyMetalSkin == 1)
+        if (save.data.buyEyeSkin == 1)
         {
             buyButtons[2].gameObject.SetActive(false);
             equipButtons[3].gameObject.SetActive(true);
+        }
+        if (save.data.buyMetalSkin == 1)
+        {
+            buyButtons[3].gameObject.SetActive(false);
+            equipButtons[4].gameObject.SetActive(true);
         }
         
     }
@@ -71,6 +82,7 @@ public class SkinManager : MonoBehaviour
     public void EquipButton()
     {
         save.data.equipDefaultSkin = 0;
+        save.data.equipSoccerSkin = 0;
         save.data.equipWheelSkin = 0;
         save.data.equipEyeSkin = 0;
         save.data.equipMetalSkin = 0;
@@ -81,13 +93,17 @@ public class SkinManager : MonoBehaviour
         }
         else if (EventSystem.current.currentSelectedGameObject.name == "Equip")
         {
-            save.data.equipWheelSkin = 1;
+            save.data.equipSoccerSkin = 1;
         }
         else if (EventSystem.current.currentSelectedGameObject.name == "Equip1")
         {
-            save.data.equipEyeSkin = 1;
+            save.data.equipWheelSkin = 1;
         }
         else if (EventSystem.current.currentSelectedGameObject.name == "Equip2")
+        {
+            save.data.equipEyeSkin = 1;
+        }
+        else if (EventSystem.current.currentSelectedGameObject.name == "Equip3")
         {
             save.data.equipMetalSkin = 1;
         }
@@ -97,10 +113,6 @@ public class SkinManager : MonoBehaviour
     public void CheckSkinEquip()
     {
 
-        for (int i = 0; i < skins.Length; i++)
-        {
-            skins[i].gameObject.SetActive(false);
-        }
         for (int i = 0; i < equipButtons.Length; i++)
         {
             equipButtons[i].interactable = true;
@@ -108,24 +120,23 @@ public class SkinManager : MonoBehaviour
 
         if (save.data.equipDefaultSkin == 1)
         {
-            skins[0].gameObject.SetActive(true);
             equipButtons[0].interactable = false;
         }
-
-        if (save.data.equipWheelSkin == 1)
+        else if (save.data.equipSoccerSkin == 1)
         {
-            skins[1].gameObject.SetActive(true);
             equipButtons[1].interactable = false;
         }
-        if (save.data.equipEyeSkin == 1)
+        else if (save.data.equipWheelSkin == 1)
         {
-            skins[2].gameObject.SetActive(true);
             equipButtons[2].interactable = false;
         }
-        if (save.data.equipMetalSkin == 1)
+        else if (save.data.equipEyeSkin == 1)
         {
-            skins[3].gameObject.SetActive(true);
             equipButtons[3].interactable = false;
+        }
+        else if (save.data.equipMetalSkin == 1)
+        {
+            equipButtons[4].interactable = false;
         }
     }
 

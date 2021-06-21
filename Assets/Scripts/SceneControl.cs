@@ -7,7 +7,7 @@ public class SceneControl : MonoBehaviour
 {
     public void SkinButton()
     {
-        SceneManager.LoadScene("Skin");
+        SceneManager.LoadScene("Skins");
     }
     public void PlayButton()
     {

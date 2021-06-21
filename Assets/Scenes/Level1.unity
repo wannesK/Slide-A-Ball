@@ -6778,7 +6778,7 @@ GameObject:
   - component: {fileID: 584408674}
   - component: {fileID: 584408673}
   m_Layer: 0
-  m_Name: SkinCheck
+  m_Name: SkinEquipControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6793,12 +6793,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 584408672}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83eddc31d8f926a4d954584d99db49b0, type: 3}
+  m_Script: {fileID: 11500000, guid: 92b399b77338f884c95432206f7a3c8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   save: {fileID: 2115684012}
   skins:
   - {fileID: 684966991}
+  - {fileID: 1975456034479152}
   - {fileID: 8296172667572054483}
   - {fileID: 8296172669055707972}
   - {fileID: 8296172668429287012}
@@ -22875,10 +22876,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     diamond: 0
+    buySoccerSkin: 0
     buyWheelSkin: 0
     buyEyeSkin: 0
     buyMetalSkin: 0
     equipDefaultSkin: 0
+    equipSoccerSkin: 0
     equipWheelSkin: 0
     equipEyeSkin: 0
     equipMetalSkin: 0
