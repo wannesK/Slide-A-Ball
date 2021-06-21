@@ -8,6 +8,7 @@ public class SceneControl : MonoBehaviour
     public void SkinButton()
     {
         SceneManager.LoadScene("Skins");
+        Time.timeScale = 1f;
     }
     public void PlayButton()
     {
