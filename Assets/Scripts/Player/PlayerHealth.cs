@@ -50,7 +50,8 @@ public class PlayerHealth : MonoBehaviour
             effect.PlayerDeathEffect(transform);
 
             Destroy(gameObject);
-            //restart level UI
+
+            gameManager.TriggerDeathPanel();
 
         }
     }

@@ -16,18 +16,20 @@ public class MobilePlayerControl : MonoBehaviour
         rigid = GetComponent<Rigidbody>();
     }
 
-    private void FixedUpdate()
-    {
-        MoveForward();
-    }
+    //private void FixedUpdate()
+    //{
+    //    MoveForward();
+    //}
     private void Update()
     {
         CheckForTouch();
+        MoveForward();
     }
 
     private void MoveForward()
     {
-        rigid.velocity = Vector3.forward * forwardSpeed;        
+        //rigid.velocity = Vector3.forward * forwardSpeed;     
+        rigid.velocity = new Vector3(rigid.velocity.x, rigid.velocity.y, forwardSpeed);
     }
 
     private void CheckForTouch()
@@ -39,7 +41,7 @@ public class MobilePlayerControl : MonoBehaviour
             if (touch.phase == TouchPhase.Moved)
             {
                 transform.position = new Vector3(transform.position.x + touch.deltaPosition.x * turnSpeed,
-                                                 transform.position.y, transform.position.z);
+                                                 rigid.velocity.y, rigid.velocity.z);
             }
         }
     }

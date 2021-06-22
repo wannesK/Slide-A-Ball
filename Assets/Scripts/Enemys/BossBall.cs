@@ -33,7 +33,7 @@ public class BossBall : MonoBehaviour
             {
                 Destroy(other.gameObject);
                 effect.PlayerDeathEffect(other.transform);
-                //restart level UI
+                gameManager.TriggerDeathPanel();
             }
 
         }

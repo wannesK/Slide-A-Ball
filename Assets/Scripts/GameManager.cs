@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public int greenBall;
 
     public LevelProgressBar levelProgressBar;
+    public GameObject deathPanel;
 
     private CameraControl cam;
     private void Awake()
@@ -23,11 +24,21 @@ public class GameManager : MonoBehaviour
     {
         greenBall -= value;
         return greenBall;
-    }
-    
+    }    
     public void StopFunctions()
     {
         cam.gameStarted = false;
         levelProgressBar.gameRunning = false;
+    }
+
+    public void TriggerDeathPanel()
+    {
+        StartCoroutine(DeathPanelActive());
+    }
+    private IEnumerator DeathPanelActive()
+    {
+        yield return new WaitForSeconds(1.4f);
+        deathPanel.SetActive(true);
+        Time.timeScale = 0f;
     }
 }
