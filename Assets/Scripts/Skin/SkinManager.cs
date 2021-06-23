@@ -3,8 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class SkinManager : MonoBehaviour
-{
-    
+{    
     public SaveManager save;
 
     public Button[] buyButtons;
@@ -18,33 +17,25 @@ public class SkinManager : MonoBehaviour
 
     public void BuyButton()
     {
-        if (EventSystem.current.currentSelectedGameObject.name == "Buy" && save.data.diamond >= 100) //Hangi button a basýldý kontrolu
+        if (EventSystem.current.currentSelectedGameObject.name == "Buy" && save.data.diamond >= 100) // Which button pressed control
         {
             save.data.diamond -= 100;
-            save.data.buySoccerSkin = 1;  //save deki int lari 1 e eþitleyip aþaðýda kontrol ediyo
-
-            Debug.Log("Skin buyed");
+            save.data.buySoccerSkin = 1;  
         }
-        else if (EventSystem.current.currentSelectedGameObject.name == "Buy1" && save.data.diamond >= 100) //Hangi button a basýldý kontrolu
+        else if (EventSystem.current.currentSelectedGameObject.name == "Buy1" && save.data.diamond >= 100) 
         {
             save.data.diamond -= 100;
-            save.data.buyWheelSkin = 1;  //save deki int lari 1 e eþitleyip aþaðýda kontrol ediyo
-            
-            Debug.Log("Skin buyed");
+            save.data.buyWheelSkin = 1;           
         }
         else if (EventSystem.current.currentSelectedGameObject.name == "Buy2" && save.data.diamond >= 200)
         {
             save.data.diamond -= 200;
             save.data.buyEyeSkin = 1;
-
-            Debug.Log("Skin buyed1");
         }
         else if (EventSystem.current.currentSelectedGameObject.name == "Buy3" && save.data.diamond >= 300)
         {
             save.data.diamond -= 300;
             save.data.buyMetalSkin = 1;
-
-            Debug.Log("Skin buyed2");
         }
         else
         {
@@ -54,7 +45,7 @@ public class SkinManager : MonoBehaviour
         CheckSkinIsBuyed();
 
     }  
-    public void CheckSkinIsBuyed() // kayýtlý int deðerlerini kontrol edip ona göre butonlarý aktif ediyo
+    public void CheckSkinIsBuyed() 
     {
         if (save.data.buySoccerSkin == 1)
         {
