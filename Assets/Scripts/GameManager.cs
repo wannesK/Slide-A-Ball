@@ -7,7 +7,9 @@ public class GameManager : MonoBehaviour
     public int greenBall;
 
     public LevelProgressBar levelProgressBar;
+
     public GameObject deathPanel;
+    public GameObject levelCompletedPanel;
 
     private CameraControl cam;
     private void Awake()
@@ -39,6 +41,17 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1.4f);
         deathPanel.SetActive(true);
+
         Time.timeScale = 0f;
+    }
+
+    public void TriggerLevelCompleted()
+    {
+        StartCoroutine(LevelCompletedPanel());
+    }
+    private IEnumerator LevelCompletedPanel()
+    {
+        yield return new WaitForSeconds(.9f);
+        levelCompletedPanel.SetActive(true);
     }
 }

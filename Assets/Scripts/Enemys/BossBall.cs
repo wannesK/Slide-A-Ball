@@ -26,13 +26,17 @@ public class BossBall : MonoBehaviour
             if (gameManager.greenBall > bossHealt)
             {                
                 Destroy(gameObject);
+
                 effect.BossDeathEffect(transform);
-                //next level UI
+
+                gameManager.TriggerLevelCompleted();
             }
             else
             {
                 Destroy(other.gameObject);
+
                 effect.PlayerDeathEffect(other.transform);
+
                 gameManager.TriggerDeathPanel();
             }
 
