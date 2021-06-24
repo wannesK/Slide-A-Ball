@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class SceneControl : MonoBehaviour
 {
+    private SaveManager save;
+    private void Awake()
+    {
+        save = GameObject.FindGameObjectWithTag("SaveManager").GetComponent<SaveManager>();
+    }
     public void SkinButton()
     {
         SceneManager.LoadScene("Skins");
@@ -12,11 +17,18 @@ public class SceneControl : MonoBehaviour
     }
     public void PlayButton()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene($"Level{save.data.currentLevel}");
     }
 
     public void RestartActiveScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void NextLevelButton()
+    {
+        save.data.currentLevel++;
+
+        SceneManager.LoadScene($"Level{save.data.currentLevel}");
     }
 }

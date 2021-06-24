@@ -12,6 +12,7 @@ TagManager:
   - GameManager
   - WallBarrier
   - RotatingTrap
+  - SaveManager
   layers:
   - Default
   - TransparentFX

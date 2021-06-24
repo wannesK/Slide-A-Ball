@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 3b24d1f3a3450e24ca2a6370629c5302, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -1734,7 +1734,7 @@ GameObject:
   - component: {fileID: 926659749}
   m_Layer: 0
   m_Name: SaveManager
-  m_TagString: Untagged
+  m_TagString: SaveManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1765,6 +1765,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     diamond: 0
+    currentLevel: 1
     buySoccerSkin: 0
     buyWheelSkin: 0
     buyEyeSkin: 0
@@ -4372,6 +4373,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diaomdText: {fileID: 893497654}
+  score: {fileID: 0}
+  score1: {fileID: 0}
   save: {fileID: 926659750}
 --- !u!4 &1764924925
 Transform:
