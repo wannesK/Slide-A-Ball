@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7563526185229165136}
   - component: {fileID: 7657993955553986758}
   - component: {fileID: 7655103743911547522}
-  - component: {fileID: 7596722138540974046}
+  - component: {fileID: 8384182845456295812}
   m_Layer: 0
   m_Name: RedBallEffect
   m_TagString: Untagged
@@ -4732,7 +4732,7 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &7596722138540974046
+--- !u!114 &8384182845456295812
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4741,10 +4741,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7565556028278945740}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fd2e8874f60266498a388d7229a1bac, type: 3}
+  m_Script: {fileID: 11500000, guid: 754cace4033b93e4ba5c4a64b6723f6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnlyDeactivate: 0
 --- !u!1001 &5554800520856788648
 PrefabInstance:
   m_ObjectHideFlags: 0

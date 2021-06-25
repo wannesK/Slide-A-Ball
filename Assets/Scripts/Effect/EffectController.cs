@@ -45,7 +45,7 @@ public class EffectController : MonoBehaviour
     }
     public void BoltEffect(Transform transform)
     {
-        Instantiate(effects[7], transform.position, Quaternion.identity);
+        Instantiate(effects[7], transform.position, Quaternion.identity);        
     }
     public void ShakeTheCamera()
     {
