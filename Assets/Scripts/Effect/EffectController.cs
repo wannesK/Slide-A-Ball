@@ -36,12 +36,16 @@ public class EffectController : MonoBehaviour
     public void RedBallEffect(Transform transform)
     {
         Instantiate(effects[4], transform.position, Quaternion.identity);
-    }
+    }   
     public void FloatingText(Transform transform, string diamondValue)
     {
         effects[5].GetComponent<TextMeshPro>().text = diamondValue;
 
         Instantiate(effects[5], transform.position, Quaternion.identity);
+    }
+    public void BoltEffect(Transform transform)
+    {
+        Instantiate(effects[7], transform.position, Quaternion.identity);
     }
     public void ShakeTheCamera()
     {
