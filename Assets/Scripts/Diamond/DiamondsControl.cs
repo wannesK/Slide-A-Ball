@@ -9,9 +9,11 @@ public class DiamondsControl : MonoBehaviour
     public TextMeshProUGUI diaomdText;
     public Text score, score1;
 
+    //public Button adButton;
+
     public SaveManager save;
 
-    private int levelTotalDiamonds;
+    public int levelTotalDiamonds;
     void Start()
     {
         SetDiamondText();
@@ -33,4 +35,19 @@ public class DiamondsControl : MonoBehaviour
         score.text = $"+{levelTotalDiamonds}";
         score1.text = $"{levelTotalDiamonds}";
     }
+
+    public void AdWatched()
+    {
+        save.data.diamond += levelTotalDiamonds;
+
+        diaomdText.text = save.data.diamond.ToString();
+
+        //StartCoroutine(DisableButton());
+    }
+
+    //IEnumerator DisableButton()
+    //{
+    //    yield return new WaitForSeconds(1);
+    //    adButton.gameObject.SetActive(false);
+    //}
 }
