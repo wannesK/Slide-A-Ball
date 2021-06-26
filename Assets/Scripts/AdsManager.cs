@@ -6,11 +6,12 @@ using UnityEngine.UI;
 
 public class AdsManager : MonoBehaviour, IUnityAdsListener
 {
-    string gameId = "4191324";
-    string mySurfacingId = "Rewarded_Android";
+    private string gameId = "4191324";
+    private string mySurfacingId = "Rewarded_Android";
 
-    bool testMode = true;
+    private bool testMode = true;
 
+    private bool adClikced = false;
     private DiamondsControl diamonds;
 
     // Initialize the Ads listener and service:
@@ -25,9 +26,10 @@ public class AdsManager : MonoBehaviour, IUnityAdsListener
     public void ShowRewardedVideo()
     {
         // Check if UnityAds ready before calling Show method:
-        if (Advertisement.IsReady(mySurfacingId))
+        if (Advertisement.IsReady(mySurfacingId) && adClikced == false)
         {
             Advertisement.Show(mySurfacingId);
+            adClikced = true;
         }
         else
         {
@@ -39,8 +41,9 @@ public class AdsManager : MonoBehaviour, IUnityAdsListener
     public void OnUnityAdsDidFinish(string surfacingId, ShowResult showResult)
     {
         // Define conditional logic for each ad completion status:
-        if (surfacingId == mySurfacingId)
-        {
+        if (surfacingId == mySurfacingId )
+        {           
+
             if (showResult == ShowResult.Finished)
             {
                 // Reward the user for watching the ad to completion.
