@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
-{    
+{
+    public float growthRate = 0.05f;
+
     private GameManager gameManager;
     private EffectController effect;
     private PcPlayerMovement movement;
@@ -58,14 +60,13 @@ public class PlayerHealth : MonoBehaviour
 
     private void EnlargePlayer()
     {
-        transform.localScale += new Vector3(0.05f, 0.05f, 0.05f);
+        transform.localScale += new Vector3(growthRate, growthRate, growthRate);
 
         gameManager.IncreaseGreenBall(1);
     }
     private void ShrinkPlayer()
     {
-        transform.localScale -= new Vector3(0.05f, 0.05f, 0.05f);
-        //effect
+        transform.localScale -= new Vector3(growthRate, growthRate, growthRate);
 
         SlowDownPlayer();
 
@@ -73,8 +74,7 @@ public class PlayerHealth : MonoBehaviour
     }
     private void TrapDamage()
     {
-        transform.localScale -= new Vector3(0.1f, 0.1f, 0.1f);
-        //effect
+        transform.localScale -= new Vector3(growthRate * 2, growthRate * 2, growthRate * 2);
 
         SlowDownPlayer();
 

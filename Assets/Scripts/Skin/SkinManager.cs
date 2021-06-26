@@ -5,9 +5,13 @@ using UnityEngine.EventSystems;
 public class SkinManager : MonoBehaviour
 {    
     public SaveManager save;
+    public DiamondsControl diamonds;
 
     public Button[] buyButtons;
     public Button[] equipButtons;
+
+
+    public int soccerValue, wheelValue, eyeValue, metalValue;
 
     void Start()
     {
@@ -17,30 +21,32 @@ public class SkinManager : MonoBehaviour
 
     public void BuyButton()
     {
-        if (EventSystem.current.currentSelectedGameObject.name == "Buy" && save.data.diamond >= 100) // Which button pressed control
+        if (EventSystem.current.currentSelectedGameObject.name == "Buy" && save.data.diamond >= soccerValue) // Which button pressed control
         {
-            save.data.diamond -= 100;
+            save.data.diamond -= soccerValue;
             save.data.buySoccerSkin = 1;  
         }
-        else if (EventSystem.current.currentSelectedGameObject.name == "Buy1" && save.data.diamond >= 100) 
+        else if (EventSystem.current.currentSelectedGameObject.name == "Buy1" && save.data.diamond >= wheelValue) 
         {
-            save.data.diamond -= 100;
+            save.data.diamond -= wheelValue;
             save.data.buyWheelSkin = 1;           
         }
-        else if (EventSystem.current.currentSelectedGameObject.name == "Buy2" && save.data.diamond >= 200)
+        else if (EventSystem.current.currentSelectedGameObject.name == "Buy2" && save.data.diamond >= eyeValue)
         {
-            save.data.diamond -= 200;
+            save.data.diamond -= eyeValue;
             save.data.buyEyeSkin = 1;
         }
-        else if (EventSystem.current.currentSelectedGameObject.name == "Buy3" && save.data.diamond >= 300)
+        else if (EventSystem.current.currentSelectedGameObject.name == "Buy3" && save.data.diamond >= metalValue)
         {
-            save.data.diamond -= 300;
+            save.data.diamond -= metalValue;
             save.data.buyMetalSkin = 1;
         }
         else
         {
             Debug.Log("Not Enough Money");
         }
+
+        diamonds.SetDiamondText();
 
         CheckSkinIsBuyed();
 

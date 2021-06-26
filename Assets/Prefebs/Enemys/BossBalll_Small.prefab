@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1919100515926508694
+--- !u!1 &7687826180773254030
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,58 +8,61 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5736439018606980457}
-  - component: {fileID: 2525386948807226266}
-  - component: {fileID: 278602136691903036}
+  - component: {fileID: 7687826180773744558}
+  - component: {fileID: 7687826180770353038}
+  - component: {fileID: 7687826180771319118}
+  - component: {fileID: 7687826180662854349}
+  - component: {fileID: 7687826180773254031}
+  - component: {fileID: 7687826180773254000}
   m_Layer: 0
-  m_Name: SpikeBall
+  m_Name: BossBalll_Small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5736439018606980457
+--- !u!4 &7687826180773744558
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1919100515926508694}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_GameObject: {fileID: 7687826180773254030}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.09, y: 1.76, z: 75.006}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
-  m_Father: {fileID: 3218896348341896355}
+  m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &2525386948807226266
+--- !u!33 &7687826180770353038
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1919100515926508694}
-  m_Mesh: {fileID: 4300002, guid: c455996f6e6b49d418895f41b5216202, type: 3}
---- !u!23 &278602136691903036
+  m_GameObject: {fileID: 7687826180773254030}
+  m_Mesh: {fileID: 4300000, guid: 51133ebca86c2ad42a8acd5ba0f27df1, type: 3}
+--- !u!23 &7687826180771319118
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1919100515926508694}
+  m_GameObject: {fileID: 7687826180773254030}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
+  m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 621491b89985a3641b9a102bf1267a50, type: 2}
+  - {fileID: 2100000, guid: 911d1206162b82e49a952d053263037c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -81,64 +84,44 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &1941202022228194992
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3218896348341896355}
-  - component: {fileID: 7624987667534812271}
-  - component: {fileID: 1941202022228194999}
-  m_Layer: 0
-  m_Name: 'RedBall '
-  m_TagString: RedBall
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3218896348341896355
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1941202022228194992}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.627, y: -5.919, z: 11.23}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_Children:
-  - {fileID: 5736439018606980457}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7624987667534812271
+--- !u!114 &7687826180662854349
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1941202022228194992}
+  m_GameObject: {fileID: 7687826180773254030}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df877318b72be474ebd224cb43e5a8ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateSpeedX: 70
-  rotateSpeedY: 0
-  rotateSpeedZ: 70
---- !u!135 &1941202022228194999
+  rotateSpeedX: 50
+  rotateSpeedY: -70
+  rotateSpeedZ: 0
+--- !u!135 &7687826180773254031
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1941202022228194992}
+  m_GameObject: {fileID: 7687826180773254030}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.75992674
-  m_Center: {x: 0.013094544, y: 0.01489079, z: -0.07815081}
+  m_Radius: 0.85112
+  m_Center: {x: 0, y: -0.013284922, z: -0.05470276}
+--- !u!114 &7687826180773254000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7687826180773254030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a95062f352299c46b340d0cbb0494d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossHealt: 2
