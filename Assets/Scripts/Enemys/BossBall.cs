@@ -21,6 +21,7 @@ public class BossBall : MonoBehaviour
             gameManager.StopFunctions();
 
             other.gameObject.GetComponent<PcPlayerMovement>().enabled = false;
+            other.gameObject.GetComponent<MobilePlayerControl>().enabled = false;
             other.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
 
             if (gameManager.greenBall > bossHealt)

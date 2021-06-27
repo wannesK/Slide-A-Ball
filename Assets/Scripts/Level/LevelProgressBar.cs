@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class LevelProgressBar : MonoBehaviour
 {
@@ -10,14 +11,21 @@ public class LevelProgressBar : MonoBehaviour
 
     public bool gameRunning = true;
 
+    public TextMeshProUGUI levelText;
+
     private Transform player;
     private float maxDistance;
+
+    private SaveManager save;
     
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        save = GameObject.FindGameObjectWithTag("SaveManager").GetComponent<SaveManager>();
 
         maxDistance = GetDistance();
+
+        levelText.text = save.data.currentLevel.ToString();
     }
 
 
