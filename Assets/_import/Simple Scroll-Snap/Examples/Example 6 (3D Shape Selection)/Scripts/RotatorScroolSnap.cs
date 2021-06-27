@@ -2,7 +2,7 @@
 
 namespace DanielLochner.Assets.SimpleScrollSnap
 {
-    public class Rotator : MonoBehaviour
+    public class RotatorScroolSnap : MonoBehaviour
     {
         [SerializeField] private float rotationSpeed;
 

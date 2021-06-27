@@ -29,7 +29,12 @@ public class AdsManager : MonoBehaviour, IUnityAdsListener
         if (Advertisement.IsReady(mySurfacingId) && adClikced == false)
         {
             Advertisement.Show(mySurfacingId);
+
             adClikced = true;
+        }
+        else if (adClikced == true)
+        {
+            diamonds.TurnOffButtonDisplay();
         }
         else
         {
