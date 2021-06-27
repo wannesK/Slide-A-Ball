@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     public int DecreaseGreenBall(int value)
     {
         greenBall -= value;
+
         return greenBall;
     }    
     public void StopFunctions()

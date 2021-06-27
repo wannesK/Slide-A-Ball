@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MobilePlayerControl : MonoBehaviour
 {
-    public float forwardSpeed = 8f;
+    public float forwardSpeed = 6.7f;
     public float turnSpeed = 0.007f;
 
 

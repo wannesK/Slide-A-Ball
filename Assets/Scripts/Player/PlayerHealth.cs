@@ -9,12 +9,14 @@ public class PlayerHealth : MonoBehaviour
     private GameManager gameManager;
     private EffectController effect;
     private PcPlayerMovement movement;
+    private MobilePlayerControl playerControl;
     private void Awake()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         effect = GameObject.FindGameObjectWithTag("GameManager").GetComponent<EffectController>();
 
         movement = GetComponent<PcPlayerMovement>();
+        playerControl = GetComponent<MobilePlayerControl>();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -47,14 +49,7 @@ public class PlayerHealth : MonoBehaviour
         }
         else if (other.CompareTag("RotatingTrap"))
         {
-            gameManager.StopFunctions();
-
-            effect.PlayerDeathEffect(transform);
-
-            Destroy(gameObject);
-
-            gameManager.TriggerDeathPanel();
-
+            PlayerIsDeath();
         }
     }
 
@@ -67,30 +62,48 @@ public class PlayerHealth : MonoBehaviour
     private void ShrinkPlayer()
     {
         transform.localScale -= new Vector3(growthRate, growthRate, growthRate);
-
-        SlowDownPlayer();
-
+        
         gameManager.DecreaseGreenBall(1);
+
+        SlowDownPlayer();        
     }
     private void TrapDamage()
     {
         transform.localScale -= new Vector3(growthRate * 2, growthRate * 2, growthRate * 2);
 
-        SlowDownPlayer();
-
         gameManager.DecreaseGreenBall(2);
+
+        SlowDownPlayer();
     }
 
     private void SlowDownPlayer()
     {
         effect.ShakeTheCamera();
 
+        if (gameManager.greenBall < -2)
+        {
+            PlayerIsDeath();
+        }
+
+        playerControl.forwardSpeed /= 1.6f;
         movement.speed /= 1.6f;
         StartCoroutine("GiveBackPLayerSpeed");
     }
     private IEnumerator GiveBackPLayerSpeed()
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.35f);
+        playerControl.forwardSpeed *= 1.6f;
         movement.speed *= 1.6f;
+    }
+
+    public void PlayerIsDeath() 
+    {
+        gameManager.StopFunctions();
+
+        effect.PlayerDeathEffect(transform);
+
+        Destroy(gameObject);
+
+        gameManager.TriggerDeathPanel();
     }
 }
