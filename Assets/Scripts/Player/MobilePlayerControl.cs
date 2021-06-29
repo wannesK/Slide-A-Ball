@@ -7,7 +7,6 @@ public class MobilePlayerControl : MonoBehaviour
     public float forwardSpeed = 6.7f;
     public float turnSpeed = 0.007f;
 
-
     private Touch touch;
     private Rigidbody rigid;
 
