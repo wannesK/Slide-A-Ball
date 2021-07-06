@@ -76,6 +76,7 @@ public class SaveManager : MonoBehaviour
 public class GameData
 {
     public int diamond;
+    public float highScore;
     public int currentLevel = 1;
 
     public int buySoccerSkin, buyWheelSkin, buyEyeSkin, buyMetalSkin;

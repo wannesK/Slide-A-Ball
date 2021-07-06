@@ -33,7 +33,11 @@ public class GameManager : MonoBehaviour
     {
         cam.gameStarted = false;
         levelProgressBar.gameRunning = false;
-        endlessMode.gameStarted = false;
+
+        if (endlessMode != null)
+        {
+            endlessMode.gameStarted = false;
+        }
     }
 
     public void TriggerDeathPanel()

@@ -27,7 +27,7 @@ public class RoadSpawnManager : MonoBehaviour
 
     public void SpawnRoad()
     {
-        var r = Instantiate(roads[RandomNumberGenerator(0, 10)], spawnPosHolder, Quaternion.identity);
+        var r = Instantiate(roads[RandomNumberGenerator(0, 28)], spawnPosHolder, Quaternion.identity);
 
         roadHolder.Add(r);
 

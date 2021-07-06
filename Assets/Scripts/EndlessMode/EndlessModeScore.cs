@@ -7,12 +7,18 @@ public class EndlessModeScore : MonoBehaviour
 {
     public float endlessModeScore;
     public Text scoreText;
+    public Text highScore;
+    public bool gameStarted;
 
     private Transform player;
-    public bool gameStarted;
+    private SaveManager save;
+
     void Start()
     {
+        save = GameObject.FindGameObjectWithTag("SaveManager").GetComponent<SaveManager>();
         StartCoroutine(FindPlayer());
+
+        highScore.text = "Best Score : " + save.data.highScore.ToString("0");
     }
 
     private void Update()
@@ -26,6 +32,15 @@ public class EndlessModeScore : MonoBehaviour
         {
             endlessModeScore = player.position.z;
             scoreText.text = endlessModeScore.ToString("0");
+        }
+        else
+        {
+            if (endlessModeScore > save.data.highScore)
+            {
+                save.data.highScore = endlessModeScore;
+
+                highScore.text = "Best Score : " + save.data.highScore.ToString("0");
+            }
         }
     }
 
