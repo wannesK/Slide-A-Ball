@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject deathPanel;
     public GameObject levelCompletedPanel;
+    public EndlessModeScore endlessMode;
 
     private CameraControl cam;
     private void Awake()
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
     {
         cam.gameStarted = false;
         levelProgressBar.gameRunning = false;
+        endlessMode.gameStarted = false;
     }
 
     public void TriggerDeathPanel()
