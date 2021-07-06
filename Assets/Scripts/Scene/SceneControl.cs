@@ -31,4 +31,9 @@ public class SceneControl : MonoBehaviour
 
         SceneManager.LoadScene($"Level{save.data.currentLevel}");
     }
+
+    public void EndlessModeButton()
+    {
+        SceneManager.LoadScene("EndlessMode");
+    }
 }
