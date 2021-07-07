@@ -18,6 +18,13 @@ public class PlayerHealth : MonoBehaviour
         movement = GetComponent<PcPlayerMovement>();
         playerControl = GetComponent<MobilePlayerControl>();
     }
+    private void Update()
+    {
+        if (transform.position.y < -25)
+        {
+            PlayerIsDeath();
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("GreenBall"))
