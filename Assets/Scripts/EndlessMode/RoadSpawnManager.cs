@@ -10,6 +10,7 @@ public class RoadSpawnManager : MonoBehaviour
     public List<GameObject> roadHolder;
 
     private Vector3 spawnPosHolder = new Vector3(0f, 0f, 0f);
+    //private int numberHolder = 50;
     private void Start()
     {
         for (int i = 0; i < 3; i++)
@@ -22,6 +23,15 @@ public class RoadSpawnManager : MonoBehaviour
     {
         int randomNumber = Random.Range(min, max);
 
+        //if (randomNumber == numberHolder)
+        //{
+        //    randomNumber = Random.Range(min, max);
+        //    return randomNumber;
+        //}
+
+        //numberHolder = randomNumber;
+
+        //Debug.Log(randomNumber);
         return randomNumber;
     }
 

@@ -17,21 +17,20 @@ public class SpawnTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             manager.SpawnRoad();
-
             if (speedLimit <= 11f)
             {
                 speedLimit += .25f;
 
                 other.GetComponent<MobilePlayerControl>().forwardSpeed += .25f;
                 other.GetComponent<PcPlayerMovement>().speed += .25f;
-            }            
+            }
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            manager.DestroyRoad();
+            manager.DestroyRoad();            
         }
     }
 }

@@ -1643,6 +1643,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     diamond: 0
+    highScore: 0
     currentLevel: 1
     buySoccerSkin: 0
     buyWheelSkin: 0
@@ -2259,7 +2260,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BUY   1250
+  m_text: BUY   1600
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
@@ -4137,7 +4138,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BUY   750
+  m_text: BUY   900
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
@@ -4320,7 +4321,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BUY   1000
+  m_text: BUY   1300
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
@@ -4517,10 +4518,10 @@ MonoBehaviour:
   - {fileID: 134573780}
   - {fileID: 1979132753}
   - {fileID: 2121624659}
-  soccerValue: 400
-  wheelValue: 750
-  eyeValue: 1000
-  metalValue: 1250
+  soccerValue: 700
+  wheelValue: 900
+  eyeValue: 1300
+  metalValue: 1600
 --- !u!4 &1832069168
 Transform:
   m_ObjectHideFlags: 0
@@ -4805,7 +4806,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BUY   400
+  m_text: BUY   700
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
