@@ -4,9 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class LastPlayedSceneLoader : MonoBehaviour
 {
-    public SaveManager save;
+    private SaveManager save;
     void Start()
     {
+        save = SaveManager.instance;
         SceneManager.LoadScene($"Level{save.data.currentLevel}");
     }
 

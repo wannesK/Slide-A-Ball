@@ -11,11 +11,12 @@ public class DiamondsControl : MonoBehaviour
 
     public Button adButton;
 
-    public SaveManager save;
+    private SaveManager save;
 
     public int levelTotalDiamonds;
     void Start()
     {
+        save = SaveManager.instance;
         SetDiamondText();
     }
     public int IncreaseDiamond(int value)

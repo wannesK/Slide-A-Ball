@@ -22,7 +22,10 @@ public class BossBall : MonoBehaviour
 
             other.gameObject.GetComponent<PcPlayerMovement>().enabled = false;
             other.gameObject.GetComponent<MobilePlayerControl>().enabled = false;
-            other.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+            //other.gameObject.GetComponent<PlayerHealth>().enabled = false;
+
+            other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX;
+
 
             if (gameManager.greenBall > bossHealt)
             {                

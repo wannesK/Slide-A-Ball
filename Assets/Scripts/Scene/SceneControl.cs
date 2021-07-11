@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 public class SceneControl : MonoBehaviour
 {
     private SaveManager save;
-    private void Awake()
+    private void Start()
     {
-        save = GameObject.FindGameObjectWithTag("SaveManager").GetComponent<SaveManager>();
+        save = SaveManager.instance;
     }
     public void SkinButton()
     {

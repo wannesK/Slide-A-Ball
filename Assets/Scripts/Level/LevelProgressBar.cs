@@ -23,8 +23,8 @@ public class LevelProgressBar : MonoBehaviour
     {
         StartCoroutine(FindPlayer());
 
-        save = GameObject.FindGameObjectWithTag("SaveManager").GetComponent<SaveManager>();
-        
+        save = SaveManager.instance;
+
         levelText.text = save.data.currentLevel.ToString();
     }
 

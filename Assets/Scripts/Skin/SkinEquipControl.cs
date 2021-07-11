@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class SkinEquipControl : MonoBehaviour
 {
-    public SaveManager save;
+    private SaveManager save;
 
     public GameObject[] skins;
 
     private void Start()
     {
+        save = SaveManager.instance;
         CheckSkinEquip();
     }
 

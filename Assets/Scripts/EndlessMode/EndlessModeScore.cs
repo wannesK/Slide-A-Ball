@@ -15,7 +15,7 @@ public class EndlessModeScore : MonoBehaviour
 
     void Start()
     {
-        save = GameObject.FindGameObjectWithTag("SaveManager").GetComponent<SaveManager>();
+        save = SaveManager.instance;
         StartCoroutine(FindPlayer());
 
         highScore.text = "Best Score : " + save.data.highScore.ToString("0");

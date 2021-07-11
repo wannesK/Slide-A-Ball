@@ -4,17 +4,18 @@ using UnityEngine.EventSystems;
 
 public class SkinManager : MonoBehaviour
 {    
-    public SaveManager save;
     public DiamondsControl diamonds;
 
     public Button[] buyButtons;
     public Button[] equipButtons;
 
-
     public int soccerValue, wheelValue, eyeValue, metalValue;
+
+    private SaveManager save;
 
     void Start()
     {
+        save = SaveManager.instance;
         CheckSkinIsBuyed();
         CheckSkinEquip();
     }

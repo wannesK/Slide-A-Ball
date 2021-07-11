@@ -285,7 +285,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92b399b77338f884c95432206f7a3c8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  save: {fileID: 680801467}
   skins:
   - {fileID: 1648321187}
   - {fileID: 1133121125}
@@ -1655,7 +1654,6 @@ MonoBehaviour:
   score: {fileID: 498089900}
   score1: {fileID: 1499260305}
   adButton: {fileID: 0}
-  save: {fileID: 680801467}
   levelTotalDiamonds: 0
 --- !u!114 &515117893
 MonoBehaviour:
