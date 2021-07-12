@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneControl : MonoBehaviour
 {
+    [SerializeField] private GameObject loadingPanel;
+
     private SaveManager save;
     private void Start()
     {
@@ -34,6 +36,7 @@ public class SceneControl : MonoBehaviour
 
     public void EndlessModeButton()
     {
+        loadingPanel.SetActive(true);
         SceneManager.LoadScene("EndlessMode");
     }
 }

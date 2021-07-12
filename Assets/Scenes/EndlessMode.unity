@@ -1600,6 +1600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3cd1f35ab8bd8f4d870208f9cf70072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadingPanel: {fileID: 0}
 --- !u!114 &515117890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2877,7 +2878,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5273619050652204255, guid: bb27f6d83ee60a4458aed6f9472c34cb, type: 3}
       propertyPath: speed
-      value: 7.3
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 5273619050652204255, guid: bb27f6d83ee60a4458aed6f9472c34cb, type: 3}
       propertyPath: m_Enabled

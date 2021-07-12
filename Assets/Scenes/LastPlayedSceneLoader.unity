@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 696087270}
   - component: {fileID: 696087269}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: LoadingPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -359,7 +359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.95686275}
+  m_Color: {r: 0.1792453, g: 0.1792453, b: 0.1792453, a: 0.95686275}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -492,7 +492,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0fa839376dd61408b89a558cb18d2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  save: {fileID: 2004318549}
 --- !u!4 &1535180986
 Transform:
   m_ObjectHideFlags: 0
@@ -797,6 +796,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     diamond: 0
+    highScore: 0
     currentLevel: 1
     buySoccerSkin: 0
     buyWheelSkin: 0
