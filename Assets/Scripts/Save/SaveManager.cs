@@ -2,23 +2,28 @@ using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
-
 public class SaveManager : MonoBehaviour
-{
-    public static SaveManager instance;
+{   
     public GameData data;
     private BinaryFormatter binaryFormatter;
     private string filePath;
 
+    #region Singleton
+    public static SaveManager instance;
     private void Awake()
     {
-        if (instance == null)
-            instance = this;
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        instance = this;
         binaryFormatter = new BinaryFormatter();
         filePath = Application.persistentDataPath + "/game.data";
 
         //Debug.Log(filePath);
     }
+    #endregion
 
     public void SaveData()
     {

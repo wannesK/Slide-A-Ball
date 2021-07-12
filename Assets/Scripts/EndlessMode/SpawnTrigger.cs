@@ -4,19 +4,14 @@ using UnityEngine;
 
 public class SpawnTrigger : MonoBehaviour
 {
-    private RoadSpawnManager manager;
-
     private float speedLimit = 7;
-    private void Start()
-    {
-        manager = GameObject.Find("RoadSpawnManager").GetComponent<RoadSpawnManager>();
-    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            manager.SpawnRoad();
+            GroundSpawnManager.instance.SpawnRoad();
+
             if (speedLimit <= 11f)
             {
                 speedLimit += .25f;
@@ -30,7 +25,7 @@ public class SpawnTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            manager.DestroyRoad();            
+            GroundSpawnManager.instance.DestroyRoad();
         }
     }
 }
