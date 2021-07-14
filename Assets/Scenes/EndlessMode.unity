@@ -2181,7 +2181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zAxisSpawnPoint: 81.269
-  roads:
+  roadPrefebs:
   - {fileID: 8664441280894648149, guid: ff1b53cdba144f146b0441a94719cc67, type: 3}
   - {fileID: 9067504808579841032, guid: ac6b9f42e3146884ca1d66745df32222, type: 3}
   - {fileID: 1796731088412478748, guid: f6416889fa4d9b04d83009bf8d814c0c, type: 3}
@@ -2210,7 +2210,7 @@ MonoBehaviour:
   - {fileID: 5564545135734704241, guid: 9103c090a4ea57442995b1fba0ad4dcd, type: 3}
   - {fileID: 7040548191254226364, guid: da20138264827f444a2d6ea6a8ac5cc9, type: 3}
   - {fileID: 8925189554920557533, guid: c4b15414ca0efb7448819057288c1f6a, type: 3}
-  roadHolder: []
+  roadObecjects: []
 --- !u!1 &680801466
 GameObject:
   m_ObjectHideFlags: 0
@@ -6066,7 +6066,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1979524654
 MonoBehaviour:
   m_ObjectHideFlags: 0

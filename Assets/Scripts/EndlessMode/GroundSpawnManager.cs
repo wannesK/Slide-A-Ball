@@ -5,15 +5,15 @@ public class GroundSpawnManager : MonoBehaviour
 {
     public float zAxisSpawnPoint;
 
-    public GameObject[] roads;
-    public List<GameObject> roadHolder;
+    public List<GameObject> roadPrefebs;
+    public List<GameObject> roadObecjects;
 
     private Vector3 spawnPosHolder = new Vector3(0f, 0f, 0f);
 
     private int spawnedRoad = 3;
     private int destroyedRoad = 0;
 
-    private int lastRandomNumber = 50;
+    private int lastRandomNumber;
 
     #region Singleton
     public static GroundSpawnManager instance;
@@ -37,24 +37,19 @@ public class GroundSpawnManager : MonoBehaviour
     {
         int randomNumber = Random.Range(min, max);
 
-        if (randomNumber == lastRandomNumber)
-        {
-            randomNumber = Random.Range(min, max);
-            Debug.Log(randomNumber);
-            return randomNumber;
-        }
-
         lastRandomNumber = randomNumber;
         return randomNumber;
     }
 
     public void GenerateRoad()
     {
-        for (int i = 0; i < roads.Length; i++)
-        {
-            GameObject road = Instantiate(roads[RandomNumberGenerator(0, roads.Length)], spawnPosHolder, Quaternion.identity);
+        int total = roadPrefebs.Count;
 
-            roadHolder.Add(road);
+        for (int i = 0; i < total; i++)
+        {
+            GameObject road = Instantiate(roadPrefebs[RandomNumberGenerator(0, roadPrefebs.Count)], spawnPosHolder, Quaternion.identity);
+
+            roadObecjects.Add(road);
 
             spawnPosHolder.z += zAxisSpawnPoint;
 
@@ -62,17 +57,18 @@ public class GroundSpawnManager : MonoBehaviour
             {
                 road.SetActive(false);
             }
+            roadPrefebs.RemoveAt(lastRandomNumber);
         }        
     }
     public void SpawnRoad()
     {
-        roadHolder[spawnedRoad].SetActive(true);
+        roadObecjects[spawnedRoad].SetActive(true);
 
         spawnedRoad++;       
     }
     public void DestroyRoad()
     {
-        roadHolder[destroyedRoad].SetActive(false);
+        roadObecjects[destroyedRoad].SetActive(false);
 
         SetTheTransform();
 
@@ -82,17 +78,17 @@ public class GroundSpawnManager : MonoBehaviour
     }
     private void SetTheTransform()
     {
-        roadHolder[destroyedRoad].gameObject.transform.position = spawnPosHolder;
+        roadObecjects[destroyedRoad].gameObject.transform.position = spawnPosHolder;
 
         spawnPosHolder.z += zAxisSpawnPoint;
     }
     private void IsRoadOver()
     {
-        if (spawnedRoad >= roads.Length)
+        if (spawnedRoad >= roadObecjects.Count)
         {
             spawnedRoad = 0;
         }
-        else if (destroyedRoad >= roads.Length)
+        else if (destroyedRoad >= roadObecjects.Count)
         {
             destroyedRoad = 0;
         }

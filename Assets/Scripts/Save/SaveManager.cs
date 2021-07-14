@@ -54,7 +54,7 @@ public class SaveManager : MonoBehaviour
     {
         if (!File.Exists(filePath))
         {
-#if UNITY_ANDROID
+#if UNITY_ANDROID || UNITY_IOS
             string file = Path.Combine(Application.streamingAssetsPath, "game.data");
             WWW data = new WWW(file);
             while (!data.isDone)
