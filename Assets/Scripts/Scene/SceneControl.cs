@@ -1,10 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneControl : MonoBehaviour
 {
+    [SerializeField] private int maxLevel = 25;
+
     [SerializeField] private GameObject loadingPanel;
 
     private SaveManager save;
@@ -29,9 +29,18 @@ public class SceneControl : MonoBehaviour
 
     public void NextLevelButton()
     {
-        save.data.currentLevel++;
+        if (save.data.currentLevel == maxLevel)
+        {
+            save.data.currentLevel = maxLevel;
 
-        SceneManager.LoadScene($"Level{save.data.currentLevel}");
+            EndlessModeButton();
+        }
+        else
+        {
+            save.data.currentLevel++;
+
+            SceneManager.LoadScene($"Level{save.data.currentLevel}");
+        }       
     }
 
     public void EndlessModeButton()

@@ -1,15 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Advertisements;
-using UnityEngine.UI;
 
 public class AdsManager : MonoBehaviour, IUnityAdsListener
 {
     private string gameId = "4191324";
     private string mySurfacingId = "Rewarded_Android";
 
-    private bool testMode = true;
+    private bool testMode = false;
 
     private bool adClikced = false;
     private DiamondsControl diamonds;
